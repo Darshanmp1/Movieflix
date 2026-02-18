@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies - Discover Amazing Films</title>
+    <link rel="stylesheet" href="css/movies.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="logo">🎬 MOVIEFLIX</h1>
+            <div class="nav-right">
+                <span id="userName" class="user-name"></span>
+                <button id="logoutBtn" class="btn-logout">Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <h1 class="hero-title" id="heroTitle">Loading...</h1>
+            <p class="hero-description" id="heroDescription">Loading...</p>
+            <div class="hero-buttons">
+                <button class="btn-play">▶ Play</button>
+                <button class="btn-info">ℹ More Info</button>
+            </div>
+        </div>
+        <div class="hero-fade"></div>
+    </section>
+
+    <!-- Movie Categories -->
+    <div class="container">
+        <!-- Trending Now -->
+        <section class="movie-category">
+            <h2 class="category-title">Trending Now</h2>
+            <div class="movie-row" id="trendingMovies">
+                <div class="loading">Loading movies...</div>
+            </div>
+        </section>
+
+        <!-- Top Rated -->
+        <section class="movie-category">
+            <h2 class="category-title">Top Rated</h2>
+            <div class="movie-row" id="topRatedMovies">
+                <div class="loading">Loading movies...</div>
+            </div>
+        </section>
+
+        <!-- Popular -->
+        <section class="movie-category">
+            <h2 class="category-title">Popular</h2>
+            <div class="movie-row" id="popularMovies">
+                <div class="loading">Loading movies...</div>
+            </div>
+        </section>
+
+        <!-- Upcoming -->
+        <section class="movie-category">
+            <h2 class="category-title">Upcoming</h2>
+            <div class="movie-row" id="upcomingMovies">
+                <div class="loading">Loading movies...</div>
+            </div>
+        </section>
+
+        <!-- Action Movies -->
+        <section class="movie-category">
+            <h2 class="category-title">Action Movies</h2>
+            <div class="movie-row" id="actionMovies">
+                <div class="loading">Loading movies...</div>
+            </div>
+        </section>
+
+        <!-- Comedy Movies -->
+        <section class="movie-category">
+            <h2 class="category-title">Comedy Movies</h2>
+            <div class="movie-row" id="comedyMovies">
+                <div class="loading">Loading movies...</div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Movie Modal -->
+    <div id="movieModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-body">
+                <img id="modalPoster" class="modal-poster" src="" alt="Movie Poster">
+                <div class="modal-info">
+                    <h2 id="modalTitle"></h2>
+                    <p id="modalOverview"></p>
+                    <div class="modal-details">
+                        <p><strong>Release Date:</strong> <span id="modalRelease"></span></p>
+                        <p><strong>Rating:</strong> <span id="modalRating"></span> ⭐</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/movies.js"></script>
+</body>
+</html>
