@@ -27,23 +27,22 @@ app.get('/api/health', (req, res) => {
   res.json({ status: 'Server is running', timestamp: new Date() });
 });
 
-// Serve React app in production
-if (process.env.NODE_ENV === 'production') {
-  const buildPath = path.join(__dirname, 'client', 'build');
-  
-  console.log('Build path:', buildPath);
-  console.log('Serving static files from:', buildPath);
-  
-  // Serve static files from React build
-  app.use(express.static(buildPath));
-  
-  // Handle React routing - return index.html for all non-API routes
-  app.get('*', (req, res) => {
-    const indexPath = path.join(buildPath, 'index.html');
-    console.log('Serving index.html from:', indexPath);
-    res.sendFile(indexPath);
-  });
-}
+// Serve React app - always in production
+const buildPath = path.join(__dirname, 'client', 'build');
+console.log('='.repeat(50));
+console.log('Build path:', buildPath);
+console.log('NODE_ENV:', process.env.NODE_ENV);
+console.log('Serving static files...');
+console.log('='.repeat(50));
+
+app.use(express.static(buildPath));
+
+// Handle React routing - return index.html for all non-API routes
+app.get('*', (req, res) => {
+  const indexPath = path.join(buildPath, 'index.html');
+  console.log('Request for:', req.url, '-> serving index.html');
+  res.sendFile(indexPath);
+});
 
 // Start server
 app.listen(PORT, () => {
