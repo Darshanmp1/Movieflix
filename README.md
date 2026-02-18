@@ -215,16 +215,4 @@ npm run dev
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-## 📄 License
 
-ISC
-
-## 🙏 Credits
-
-- Movie data from [OMDb API](http://www.omdbapi.com/)
-- UI inspired by Netflix
-- Built with React, Node.js, Express, and MySQL
-
----
-
-**Made with ❤️ by Your Team**
